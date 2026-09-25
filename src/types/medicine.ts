@@ -7,15 +7,23 @@ export interface OpenFDA {
   substance_name?: string[];
   application_number?: string[];
 }
+
 export interface Medicine {
-    openfda?: OpenFDA;
-    [key: string]: unknown;
+  openfda?: OpenFDA;
+  indications_and_usage?: string[];
+  dosage_and_administration?: string[];
+  purpose?: string[];
+  warnings?: string[];
+  active_ingredient?: string[];
+  spl_product_data_elements?: string[];
+  [key: string]: unknown;
 }
+
 export interface MedicineList {
-    results: Medicine[];
-    meta?: {
-        results?: {
-            total?: number;
-        };
+  results: Medicine[];
+  meta?: {
+    results?: {
+      total?: number;
     };
+  };
 }
